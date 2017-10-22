@@ -4,7 +4,7 @@ const PRESERVE = [
 	".gitignore",
 	".git",
 	"README.md",
-	"process.yml",
+	"process.json",
 ];
 
 const { execSync } = require("child_process");
