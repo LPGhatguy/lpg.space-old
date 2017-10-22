@@ -12,11 +12,12 @@ import koaMount from "koa-mount";
 
 import App from "./App";
 
-if (process.env.NODE_ENV !== "production") {
+const NODE_ENV = process.env.NODE_ENV;
+const PORT = process.env.PORT;
+
+if (NODE_ENV !== "production") {
 	throw new Error("NODE_ENV has gotta be production, friend.");
 }
-
-const PORT = process.env.PORT;
 
 if (!PORT) {
 	throw new Error("Please define PORT!");
