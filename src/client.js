@@ -5,8 +5,10 @@ import { BrowserRouter } from "react-router-dom";
 import "./index.css";
 import App from "./App";
 
-ReactDOM.hydrate(
+const page = (
 	<BrowserRouter>
 		<App />
-	</BrowserRouter>,
-document.getElementById("root"));
+	</BrowserRouter>
+);
+
+ReactDOM.hydrate(page, document.getElementById("root"));
