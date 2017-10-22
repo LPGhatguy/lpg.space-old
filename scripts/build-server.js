@@ -1,7 +1,7 @@
 "use strict";
 
-process.env.BABEL_ENV = "development";
-process.env.NODE_ENV = "development";
+process.env.BABEL_ENV = "production";
+process.env.NODE_ENV = "production";
 
 process.on("unhandledRejection", err => {
 	throw err;
@@ -14,7 +14,7 @@ const chokidar = require("chokidar");
 
 const clear = () => process.stdout.write("\x1Bc");
 
-const transformName = name => name.replace(/^src/, "dev");
+const transformName = name => name.replace(/^src/, "deploy");
 
 const compileFile = fileName => {
 	return new Promise((resolve, reject) => {
@@ -51,8 +51,6 @@ const compileDirectory = dirName => {
 
 			const promise = Promise.all(promises)
 				.then((values) => {
-					watch();
-
 					return values;
 				})
 				.catch(err => {
@@ -97,14 +95,7 @@ const watch = () => {
 	});
 };
 
-console.log("Compiling...");
-
 compileDirectory("src")
-	.then(files => {
-		clear();
-		console.log(`Compiled: ${ files.join("\n\t") }`);
-		console.log("Watching for changes...");
-	})
 	.catch(err => {
 		console.error("Compilation failed:", err);
 	});
