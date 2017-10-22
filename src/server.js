@@ -11,8 +11,15 @@ import koaStatic from "koa-static";
 import koaMount from "koa-mount";
 
 import App from "./App";
+
 if (process.env.NODE_ENV !== "production") {
-	throw new Error("This doesn't work outside production, friend.");
+	throw new Error("NODE_ENV has gotta be production, friend.");
+}
+
+const PORT = process.env.PORT;
+
+if (!PORT) {
+	throw new Error("Please define PORT!");
 }
 
 const source = readFileSync("index.html", "utf8");
@@ -36,4 +43,10 @@ server.use(ctx => {
 	ctx.body = result;
 });
 
-server.listen(80);
+server.listen(PORT, (err) => {
+	if (err) {
+		throw err;
+	}
+
+	console.log(`Listening on port ${ PORT }`);
+});
