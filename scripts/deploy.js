@@ -10,6 +10,11 @@ const { execSync } = require("child_process");
 const { readFileSync, writeFileSync, removeSync } = require("fs-extra");
 const glob = require("glob");
 
+console.log("Updating 'deploy' from upstream...");
+process.chdir("deploy");
+execSync("git pull");
+process.chdir("..");
+
 console.log("Cleaning existing 'deploy' directory...");
 const files = glob.sync(`deploy/!(${ PRESERVE.join("|") })`);
 
@@ -33,5 +38,13 @@ pack.scripts = {
 };
 
 writeFileSync("deploy/package.json", JSON.stringify(pack, null, 2));
+
+console.log("Creating commit...");
+process.chdir("deploy");
+execSync("git add .");
+execSync(`git commit -m "Automated deployment"`);
+
+console.log("Pushing to deployment repository...");
+execSync("git push");
 
 console.log("Done!");
