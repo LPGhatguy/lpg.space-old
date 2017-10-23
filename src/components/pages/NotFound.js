@@ -1,6 +1,6 @@
 import React from "react";
 
-import Page from "./Page";
+import Page from "../Page";
 
 import "./NotFound.css";
 
@@ -13,10 +13,8 @@ export default class NotFound extends React.Component {
 
 	render() {
 		return (
-			<Page>
-				<div className="NotFound">
-					404: Not Found!
-				</div>
+			<Page className="NotFound">
+				404: Not Found!
 			</Page>
 		);
 	}
