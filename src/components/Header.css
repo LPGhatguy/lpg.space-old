@@ -1,2 +1,24 @@
 .Header {
+	background-color: #ddd;
+}
+
+.Header-inner {
+	display: flex;
+	align-items: center;
+
+	max-width: 64rem;
+	margin: 0 auto;
+}
+
+.Header-title {
+	font-size: 2rem;
+	line-height: 1.2;
+}
+
+.Header-nav {
+	display: flex;
+}
+
+.Header-navItem {
+	display: block;
 }

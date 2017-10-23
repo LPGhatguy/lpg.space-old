@@ -19,7 +19,8 @@ button, [role="button"] {
 
 body {
 	font-size: 16px;
-	font-family: sans-serif;
+	font-family: Lato, sans-serif;
+	font-weight: 400;
 	line-height: 1;
 	box-sizing: border-box;
 }
