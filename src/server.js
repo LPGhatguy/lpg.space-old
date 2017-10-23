@@ -41,6 +41,13 @@ server.use(ctx => {
 	);
 
 	const result = renderPage(renderToString(page));
+
+	if (context.status) {
+		ctx.response.status = context.status;
+	} else {
+		ctx.response.status = 200;
+	}
+
 	ctx.body = result;
 });
 
