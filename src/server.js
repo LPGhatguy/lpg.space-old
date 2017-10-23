@@ -1,5 +1,4 @@
-import register from "ignore-styles";
-register();
+import "ignore-styles";
 
 import { readFileSync } from "fs";
 
