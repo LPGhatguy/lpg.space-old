@@ -17,13 +17,19 @@ const clear = () => process.stdout.write("\x1Bc");
 const transformName = name => name.replace(/^src/, "deploy");
 
 const compileFile = fileName => {
+	const outName = transformName(fileName);
+
+	if (!fileName.match(/\.js$/)) {
+		return fs.ensureFile(outName)
+			.then(() => fs.readFile(fileName))
+			.then((contents) => fs.writeFile(outName, contents));
+	}
+
 	return new Promise((resolve, reject) => {
 		babel.transformFile(fileName, (err, result) => {
 			if (err) {
 				reject(new Error("Failed: " + err.message));
 			}
-
-			const outName = transformName(fileName);
 
 			const promise = fs.ensureFile(outName)
 				.then(() => fs.writeFile(outName, result.code));
@@ -35,7 +41,7 @@ const compileFile = fileName => {
 
 const compileDirectory = dirName => {
 	return new Promise((resolve, reject) => {
-		glob(dirName + "/**/*.js", (err, fileNames) => {
+		glob(dirName + "/**/*.?(js|css)", (err, fileNames) => {
 			if (err) {
 				reject(err);
 			}

@@ -8,12 +8,8 @@ const Header = () => (
 		<div className="Header-inner">
 			<h1 className="Header-title">lpg</h1>
 			<nav className="Header-nav">
-				<div className="Header-navItem">
-					<Link to="/">Home</Link>
-				</div>
-				<div className="Header-navItem">
-					<Link to="/about">About</Link>
-				</div>
+				<Link className="Header-navItem" to="/">Home</Link>
+				<Link className="Header-navItem" to="/about">About</Link>
 			</nav>
 		</div>
 	</header>

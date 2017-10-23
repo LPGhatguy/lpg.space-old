@@ -7,9 +7,10 @@
     "koa": "^2.3.0",
     "koa-mount": "^3.0.0",
     "koa-static": "^4.0.1",
+    "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-router-dom": "^4.2.2",
-    "react": "^16.0.0"
+    "react-syntax-highlighter": "^5.7.1"
   },
   "devDependencies": {
     "autoprefixer": "7.1.2",
@@ -113,7 +114,12 @@
       "react"
     ],
     "plugins": [
-      ["transform-class-properties", { "spec": true }]
+      [
+        "transform-class-properties",
+        {
+          "spec": true
+        }
+      ]
     ]
   },
   "eslintConfig": {

@@ -1,5 +1,5 @@
 .Header {
-	background-color: #ddd;
+	background-color: rgb(237, 237, 237);
 }
 
 .Header-inner {
@@ -17,8 +17,9 @@
 
 .Header-nav {
 	display: flex;
+	padding: 0.5rem;
 }
 
 .Header-navItem {
-	display: block;
+	padding: 0.5rem;
 }
