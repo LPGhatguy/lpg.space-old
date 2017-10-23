@@ -16,8 +16,6 @@ const code = (str) => {
 	const indentation = str[0].match(/^\n(\s*)/)[1];
 	const indentRegex = new RegExp(`\n${ indentation }`, "g");
 
-	console.log(indentRegex);
-
 	return str.map((piece, index) => {
 		piece = piece.replace(indentRegex, "\n");
 
