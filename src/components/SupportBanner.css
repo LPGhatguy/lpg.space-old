@@ -1,0 +1,34 @@
+.SupportBanner {
+	background-color: #ffdb98;
+	padding: 0.6rem 1.2rem;
+}
+
+.SupportBanner-inner {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	margin: 0 auto;
+	max-width: 64rem;
+}
+
+.SupportBanner-text {
+	font-size: 1.1rem;
+	font-weight: bold;
+}
+
+.SupportBanner-close {
+	flex-shrink: 0;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 1.1em;
+	height: 1.1em;
+	margin: 0 0.5rem;
+
+	background-color: black;
+	color: white;
+	font-size: 1.4rem;
+	font-weight: bold;
+}

@@ -4,10 +4,22 @@
 	line-height: inherit;
 	color: inherit;
 	text-decoration: none;
+	box-sizing: inherit;
+	appearance: none;
+	list-style: none;
+	background: none;
+	border: none;
+	font: inherit;
+	line-height: inherit;
+}
+
+button, [role="button"] {
+	cursor: pointer;
 }
 
 body {
 	font-size: 16px;
 	font-family: sans-serif;
 	line-height: 1;
+	box-sizing: border-box;
 }

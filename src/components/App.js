@@ -1,6 +1,9 @@
 import React from "react";
 import { Link, Route } from "react-router-dom";
 
+import Header from "./Header";
+import SupportBanner from "./SupportBanner";
+
 const Home = () => (
 	<div className="Home">
 		Home!?
@@ -13,9 +16,10 @@ const About = () => (
 	</div>
 );
 
-export default () => (
+const App = () => (
 	<div className="App">
-		hey
+		<SupportBanner />
+		<Header />
 
 		<ul>
 			<li><Link to="/">Home</Link></li>
@@ -26,3 +30,5 @@ export default () => (
 		<Route exact path="/about" component={ About } />
 	</div>
 );
+
+export default App;

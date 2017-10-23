@@ -10,7 +10,7 @@ import Koa from "koa";
 import koaStatic from "koa-static";
 import koaMount from "koa-mount";
 
-import App from "./App";
+import App from "./components/App";
 
 const NODE_ENV = process.env.NODE_ENV;
 const PORT = process.env.PORT;
