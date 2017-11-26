@@ -6,6 +6,7 @@ import "./Header.css";
 const NavItem = ({ to, children, exact }) => (
 	<NavLink className="Header-navItem" activeClassName="Header-navItem--active" exact={ exact } to={ to }>
 		{ children }
+		<div className="Header-navItem-underline" />
 	</NavLink>
 );
 
