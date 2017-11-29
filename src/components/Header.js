@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 import "./Header.css";
 
@@ -13,11 +13,12 @@ const NavItem = ({ to, children, exact }) => (
 const Header = () => (
 	<header className="Header">
 		<div className="Header-inner">
-			<h1 className="Header-title">lpg</h1>
+			<h1 className="Header-title">
+				<Link to="/">lpg</Link>
+			</h1>
 			<nav className="Header-nav">
-				<NavItem exact to="/">Home</NavItem>
 				<NavItem to="/projects">Projects</NavItem>
-				<a className="Header-navItem" href="http://horriblesoftware.com">Blog</a>
+				<NavItem to="/blog">Blog</NavItem>
 			</nav>
 		</div>
 	</header>

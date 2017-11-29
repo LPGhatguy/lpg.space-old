@@ -1,0 +1,23 @@
+.Article {
+}
+
+.Article-header {
+	display: flex;
+	align-items: center;
+	border-bottom: 1px solid #ccc;
+}
+
+.Article-title {
+	flex-grow: 1;
+	font-weight: 700;
+	font-size: 2rem;
+}
+
+.Article-date {
+	color: #666;
+	font-style: italic;
+}
+
+.Article-body {
+	padding: 0.5rem;
+}

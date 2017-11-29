@@ -3,11 +3,11 @@ import React from "react";
 import "./Page.css";
 
 const Page = ({ children, className }) => (
-	<div className={ "Page " + (className || "") }>
+	<main className={ "Page " + (className || "") }>
 		<div className="Page-inner">
 			{ children }
 		</div>
-	</div>
+	</main>
 );
 
 export default Page;

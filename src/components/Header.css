@@ -25,11 +25,8 @@
 	display: flex;
 	align-items: center;
 
-	padding: 0.5rem;
+	padding: 0.5rem 1rem;
 	position: relative;
-}
-
-.Header-navItem--active {
 }
 
 .Header-navItem-underline {
@@ -42,9 +39,9 @@
 
 	background-color: rgba(0, 0, 0, 0.07);
 
-	transition: height 0.17s ease-in-out;
+	transition: height 110ms ease-in-out;
 }
 
 .Header-navItem--active .Header-navItem-underline {
-	height: 3px;
+	height: 100%;
 }
