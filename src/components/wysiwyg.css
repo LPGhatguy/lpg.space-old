@@ -13,11 +13,11 @@
 .Wysiwyg-paragraph {
 	max-width: 44rem;
 	line-height: 2;
-	margin: 0 auto 1em auto;
+	margin: 0 auto 1.5em auto;
 }
 
 .Wysiwyg-ul {
-	margin-bottom: 1em;
+	margin-bottom: 1.5em;
 }
 
 .Wysiwyg-ul .Wysiwyg-li {
