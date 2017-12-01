@@ -14,7 +14,7 @@ const chokidar = require("chokidar");
 
 const clear = () => process.stdout.write("\x1Bc");
 
-const transformName = name => name.replace(/^src/, "deploy");
+const transformName = name => name.replace(/^src/, "build");
 
 const compileFile = fileName => {
 	const outName = transformName(fileName);
