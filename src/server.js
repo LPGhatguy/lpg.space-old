@@ -1,6 +1,7 @@
 import "ignore-styles";
 
 import { readFileSync } from "fs";
+import { execSync } from "child_process";
 
 import React from "react";
 import { renderToString } from "react-dom/server";
@@ -14,6 +15,7 @@ import App from "./components/App";
 
 const NODE_ENV = process.env.NODE_ENV;
 const PORT = process.env.PORT;
+const DEPLOY_KEY = process.env.DEPLOY_KEY;
 
 if (NODE_ENV !== "production") {
 	throw new Error("NODE_ENV has gotta be production, friend.");
@@ -21,6 +23,10 @@ if (NODE_ENV !== "production") {
 
 if (!PORT) {
 	throw new Error("Please define PORT!");
+}
+
+if (!DEPLOY_KEY) {
+	throw new Error("Please define DEPLOY_KEY!");
 }
 
 const source = readFileSync("index.html", "utf8");
@@ -34,6 +40,18 @@ const cache = new Map();
 server.use(koaMount("/static", koaStatic("static")));
 
 server.use(ctx => {
+	if (ctx.request.url === `/deploy/${ DEPLOY_KEY }`) {
+		setTimeout(() => {
+			execSync("git pull");
+			process.exit(0);
+		}, 200);
+
+		ctx.response.status = 200;
+		ctx.body = "Got it!";
+
+		return;
+	}
+
 	if (ctx.request.method === "GET" && cache.has(ctx.request.url)) {
 		ctx.response.status = 200;
 		ctx.body = cache.get(ctx.request.url);
