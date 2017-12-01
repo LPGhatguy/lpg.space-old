@@ -31,7 +31,8 @@ if (!DEPLOY_KEY) {
 
 const source = readFileSync("index.html", "utf8");
 
-const renderPage = (content) => source
+const renderPage = (content, title) => source
+	.replace(`<title></title>`, `<title>${ title }</title>`)
 	.replace(`<div id="root"></div>`, `<div id="root">${ content }</div>`);
 
 const server = new Koa();
@@ -43,6 +44,7 @@ server.use(ctx => {
 	if (ctx.request.url === `/deploy/${ DEPLOY_KEY }`) {
 		setTimeout(() => {
 			execSync("git pull");
+			execSync("npm install");
 			process.exit(0);
 		}, 200);
 
@@ -66,7 +68,10 @@ server.use(ctx => {
 		</StaticRouter>
 	);
 
-	const result = renderPage(renderToString(page));
+	const body = renderToString(page);
+	const title = context.title || "lpg";
+
+	const result = renderPage(body, title);
 
 	if (context.status) {
 		ctx.response.status = context.status;

@@ -1,6 +1,10 @@
 .Home {
 }
 
+.Home-intro {
+	margin-top: 1em;
+}
+
 .Home-identities {
 	display: flex;
 	flex-flow: row wrap;

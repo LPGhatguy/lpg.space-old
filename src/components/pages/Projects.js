@@ -19,7 +19,7 @@ const Project = ({ name, description, children }) => (
 );
 
 const Projects = () => (
-	<Page className="Projects">
+	<Page className="Projects" title="Projects">
 		<h1 className="Page-title">Projects</h1>
 
 		<ul className="Projects-list">

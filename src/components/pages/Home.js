@@ -17,21 +17,23 @@ const Identity = ({ title, name, link }) => {
 };
 
 const Home = () => (
-	<Page className="Home">
+	<Page className="Home" title="Home">
+		<div className="Home-intro">
+			<Code language="rust">
+				{ code`
+					fn main() {
+						println!("Hello, world!");
+					}
+				` }
+			</Code>
+		</div>
+
 		<div className="Home-identities">
 			<Identity title="GitHub" name="LPGhatguy" link="https://github.com/LPGhatguy" />
 			<Identity title="Twitter" name="@LPGhatguy" link="https://twitter.com/LPGhatguy" />
-			<Identity title="IRC" name="lpg / lpghatguy" />
-			<Identity title="Snark" name="Horrible Software" link="http://horriblesoftware.com" />
+			<Identity title="IRC" name="lpg" />
+			<Identity title="Snarky Blog" name="Horrible Software" link="http://horriblesoftware.com" />
 		</div>
-
-		<Code language="rust">
-			{code`
-				fn hello() {
-					println!("Hello, world!");
-				}
-			`}
-		</Code>
 	</Page>
 );
 

@@ -38,7 +38,7 @@ const Blog = () => {
 	sortedPosts.sort((a, b) => compareDate(a.date, b.date));
 
 	return (
-		<Page className="Blog">
+		<Page className="Blog" title="Blog">
 			<div className="Blog-posts">
 				<div className="Blog-post">
 					{ sortedPosts.map((post) => (
