@@ -29,10 +29,18 @@ const renderPage = (content) => source
 	.replace(`<div id="root"></div>`, `<div id="root">${ content }</div>`);
 
 const server = new Koa();
+const cache = new Map();
 
 server.use(koaMount("/static", koaStatic("static")));
 
 server.use(ctx => {
+	if (ctx.request.method === "GET" && cache.has(ctx.request.url)) {
+		ctx.response.status = 200;
+		ctx.body = cache.get(ctx.request.url);
+
+		return;
+	}
+
 	const context = {};
 	const page = (
 		<StaticRouter location={ ctx.request.url } context={ context }>
@@ -46,6 +54,10 @@ server.use(ctx => {
 		ctx.response.status = context.status;
 	} else {
 		ctx.response.status = 200;
+	}
+
+	if (ctx.request.method === "GET" && ctx.response.status === 200) {
+		cache.set(ctx.request.url, result);
 	}
 
 	ctx.body = result;
