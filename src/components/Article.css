@@ -5,6 +5,8 @@
 	display: flex;
 	align-items: center;
 	border-bottom: 1px solid #ccc;
+	max-width: 44rem;
+	margin: 0 auto;
 }
 
 .Article-title {
@@ -19,5 +21,4 @@
 }
 
 .Article-body {
-	padding: 0.5rem;
 }

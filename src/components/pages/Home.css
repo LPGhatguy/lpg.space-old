@@ -11,7 +11,7 @@
 
 .Home-identity {
 	flex-grow: 1;
-	flex-basis: 20rem;
+	flex-basis: 16rem;
 	border: 1px solid rgba(0, 0, 0, 0.15);
 	padding: 0.5rem;
 	margin: 0.25rem;

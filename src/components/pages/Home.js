@@ -22,6 +22,7 @@ const Home = () => (
 			<Identity title="GitHub" name="LPGhatguy" link="https://github.com/LPGhatguy" />
 			<Identity title="Twitter" name="@LPGhatguy" link="https://twitter.com/LPGhatguy" />
 			<Identity title="IRC" name="lpg / lpghatguy" />
+			<Identity title="Snark" name="Horrible Software" link="http://horriblesoftware.com" />
 		</div>
 
 		<Code language="rust">

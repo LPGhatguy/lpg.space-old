@@ -1,2 +1,38 @@
 .Wysiwyg {
+	font-size: 1.3rem;
+}
+
+.Wysiwyg-bold {
+	font-weight: 700;
+}
+
+.Wysiwyg-italic {
+	font-style: italic;
+}
+
+.Wysiwyg-paragraph {
+	max-width: 44rem;
+	line-height: 2;
+	margin: 0 auto 1em auto;
+}
+
+.Wysiwyg-ul {
+	margin-bottom: 1em;
+}
+
+.Wysiwyg-ul .Wysiwyg-li {
+	margin-left: 1.5em;
+	list-style-type: disc;
+}
+
+.Wysiwyg-image {
+	display: block;
+	margin: 0 auto 1em auto;
+	max-width: 100%;
+	border: 1px solid #ddd;
+}
+
+.Wysiwyg-br {
+	display: block;
+	margin-bottom: 1em;
 }
