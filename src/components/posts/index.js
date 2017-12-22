@@ -1,7 +1,9 @@
 import newSite from "./new-site";
+import rustCCompiler from "./rust-c-compiler";
 
 const posts = [
 	newSite,
+	rustCCompiler,
 ];
 
 const postsById = {};

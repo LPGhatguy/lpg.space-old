@@ -36,3 +36,9 @@
 	display: block;
 	margin-bottom: 1em;
 }
+
+.Wysiwyg-link {
+	display: inline;
+	color: #64a7ff;
+	text-decoration: underline;
+}

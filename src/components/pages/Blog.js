@@ -33,7 +33,8 @@ const compareDate = (a, b) => {
 };
 
 const Blog = () => {
-	const sortedPosts = [...posts];
+	const sortedPosts = posts
+		.filter(post => !post.unlisted);
 
 	sortedPosts.sort((a, b) => compareDate(a.date, b.date));
 
