@@ -39,8 +39,8 @@ export default {
 			</P>
 
 			<P>
-				Since the repository won't ever be a <Italic>useful</Italic>
-				project, it exists solely as reference code, whether for other
+				Since the repository won't ever be a <Italic>useful</Italic> project,
+				it exists solely as reference code, whether for other
 				people following along with the series or just for those curious
 				about Rust or compilers.
 			</P>
