@@ -7,7 +7,7 @@ import {
 } from "../wysiwyg";
 
 export default {
-	date: [2017, 29, 11],
+	date: [2017, 11, 29],
 	title: "New site!",
 	id: "new-site",
 	body: () => (

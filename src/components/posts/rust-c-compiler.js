@@ -7,7 +7,7 @@ import {
 } from "../wysiwyg";
 
 export default {
-	date: [2017, 21, 12],
+	date: [2017, 12, 21],
 	title: "Rust C Compiler",
 	id: "rust-c-compiler",
 	body: () => (
