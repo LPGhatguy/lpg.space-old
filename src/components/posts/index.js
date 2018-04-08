@@ -1,9 +1,11 @@
 import newSite from "./new-site";
 import rustCCompiler from "./rust-c-compiler";
+import photoWithStanLee from "./photo-with-stan-lee";
 
 const posts = [
 	newSite,
 	rustCCompiler,
+	photoWithStanLee,
 ];
 
 const postsById = {};

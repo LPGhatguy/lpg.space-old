@@ -42,3 +42,7 @@
 	color: #64a7ff;
 	text-decoration: underline;
 }
+
+.Wysiwyg-indent {
+	padding-left: 3em;
+}
