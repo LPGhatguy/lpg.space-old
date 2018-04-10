@@ -12,12 +12,24 @@ const setTitle = title => {
 	}
 };
 
+const setDescription = description => {
+	const descriptionElement = document.head.querySelector(`meta[name="description"]`);
+
+	if (description) {
+		descriptionElement.content = description;
+	} else {
+		descriptionElement.content = "Personal website of Lucien Greathouse";
+	}
+};
+
 class Page extends React.Component {
 	componentDidMount() {
 		if (this.props.staticContext) {
 			this.props.staticContext.title = this.props.title;
+			this.props.staticContext.description = this.props.description;
 		} else {
 			setTitle(this.props.title);
+			setDescription(this.props.description);
 		}
 	}
 

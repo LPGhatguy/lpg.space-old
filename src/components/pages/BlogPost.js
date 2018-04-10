@@ -17,7 +17,7 @@ const BlogPost = ({ id }) => {
 	}
 
 	return (
-		<Page className="BlogPost" title={ post.title }>
+		<Page className="BlogPost" title={ post.title } description={ post.description }>
 			<Article post={ post } inline={ false } />
 		</Page>
 	);

@@ -31,9 +31,10 @@ if (!DEPLOY_KEY) {
 
 const source = readFileSync("index.html", "utf8");
 
-const renderPage = (content, title) => source
+const renderPage = (content, title, description) => source
 	.replace(`<title></title>`, `<title>${ title }</title>`)
-	.replace(`<div id="root"></div>`, `<div id="root">${ content }</div>`);
+	.replace(`<div id="root"></div>`, `<div id="root">${ content }</div>`)
+	.replace(`{meta_description}`, `<meta name="description" content="${ description }" />`);
 
 const server = new Koa();
 const cache = new Map();
@@ -68,10 +69,11 @@ server.use(ctx => {
 		</StaticRouter>
 	);
 
-	const body = renderToString(page);
+	const content = renderToString(page);
 	const title = context.title || "lpg";
+	const description = context.description || "Personal website of Lucien Greathouse";
 
-	const result = renderPage(body, title);
+	const result = renderPage(content, title, description);
 
 	if (context.status) {
 		ctx.response.status = context.status;

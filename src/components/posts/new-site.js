@@ -9,6 +9,7 @@ import {
 export default {
 	date: [2017, 11, 29],
 	title: "New site!",
+	description: "I created a new website!",
 	id: "new-site",
 	body: () => (
 		<Wysiwyg>

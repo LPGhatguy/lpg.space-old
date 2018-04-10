@@ -9,6 +9,7 @@ import {
 export default {
 	date: [2017, 12, 21],
 	title: "Rust C Compiler",
+	description: "I created a bare-bones C compiler in Rust following Nora Sandler's Write a C Compiler Tutorial.",
 	id: "rust-c-compiler",
 	body: () => (
 		<Wysiwyg>

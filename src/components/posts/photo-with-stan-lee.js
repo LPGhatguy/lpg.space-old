@@ -3,13 +3,13 @@ import {
 	Wysiwyg,
 	Break,
 	Italic,
-	Image,
 	P,
 } from "../wysiwyg";
 
 export default {
 	date: [2018, 4, 8],
 	title: "Photo with Stan Lee",
+	description: "We got our photo taken with Stan Lee today. It was one of the most uncomfortable experiences of my life.",
 	id: "photo-with-stan-lee",
 	body: () => (
 		<Wysiwyg>
