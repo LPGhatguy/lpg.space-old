@@ -22,12 +22,14 @@
 }
 
 .Project-title {
-	font-size: 1.15rem;
+	font-size: 1.3rem;
 	font-weight: 600;
 	line-height: 1.4;
+	padding-bottom: 0.5rem;
 }
 
 .Project-description {
+	font-size: 1.1rem;
 	flex-grow: 1;
 	line-height: 1.2;
 	padding-bottom: 0.5rem;
@@ -41,6 +43,7 @@
 
 .Project-link {
 	display: inline-block;
+	font-size: 1.1rem;
 	border: 1px solid rgba(0, 0, 0, 0.15);
 	padding: 0.25rem 0.5rem;
 }

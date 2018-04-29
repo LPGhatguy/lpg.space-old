@@ -22,8 +22,36 @@ const Projects = () => (
 	<Page className="Projects" title="Projects">
 		<h1 className="Page-title">Projects</h1>
 
+		<p className="Page-paragraph">
+			Open source is incredibly important to me. Most of the things I
+			spend my personal time working on end up open source in some form or
+			another.
+		</p>
+
+		<h2 className="Page-subtitle">Interesting Personal Projects (Current)</h2>
+
 		<ul className="Projects-list">
-			<Project name="fhtagn" description="Platform for writing systems entirely in regular expressions">
+			<Project name="Mab" description="Lossless Lua 5.1+ parser in Rust">
+				<ProjectLink to="https://github.com/LPGhatguy/lua-parser">GitHub</ProjectLink>
+			</Project>
+
+			<Project name="Rojo" description="Enables external editors and version control for Roblox projects">
+				<ProjectLink to="https://github.com/LPGhatguy/rojo">GitHub</ProjectLink>
+			</Project>
+
+			<Project name="Baste" description="An alternative module system for Lua">
+				<ProjectLink to="https://github.com/LPGhatguy/baste">GitHub</ProjectLink>
+			</Project>
+
+			<Project name="Lemur" description="Roblox API emulation targeted at CI systems">
+				<ProjectLink to="https://github.com/LPGhatguy/lemur">GitHub</ProjectLink>
+			</Project>
+		</ul>
+
+		<h2 className="Page-subtitle">Interesting Personal Projects (Older)</h2>
+
+		<ul className="Projects-list">
+			<Project name="fhtagn" description="Satirical platform for writing games entirely in regular expressions">
 				<ProjectLink to="https://github.com/LPGhatguy/fhtagn">GitHub</ProjectLink>
 			</Project>
 
@@ -35,15 +63,7 @@ const Projects = () => (
 				<ProjectLink to="https://github.com/LPGhatguy/love-microphone">GitHub</ProjectLink>
 			</Project>
 
-			<Project name="Baste" description="An alternative module system for Lua">
-				<ProjectLink to="https://github.com/LPGhatguy/baste">GitHub</ProjectLink>
-			</Project>
-
-			<Project name="Lemur" description="Roblox API emulation targeted at CI systems">
-				<ProjectLink to="https://github.com/LPGhatguy/lemur">GitHub</ProjectLink>
-			</Project>
-
-			<Project name="RBXFS" description="Tool for building Roblox places from the filesystem">
+			<Project name="RBXFS" description="Tool for building Roblox places from the filesystem. Replaced by Rojo!">
 				<ProjectLink to="https://github.com/LPGhatguy/rbxfs">GitHub</ProjectLink>
 			</Project>
 
@@ -53,6 +73,34 @@ const Projects = () => (
 
 			<Project name="global-keys" description="An API for system-wide hotkeys in Windows for LÖVE">
 				<ProjectLink to="https://github.com/LPGhatguy/global-keys">GitHub</ProjectLink>
+			</Project>
+		</ul>
+
+		<h2 className="Page-subtitle">Open Source at Roblox (2017 - current)</h2>
+
+		<ul className="Projects-list">
+			<Project name="Rodux" description="Redux analog for Roblox Lua">
+				<ProjectLink to="https://github.com/Roblox/rodux">GitHub</ProjectLink>
+			</Project>
+
+			<Project name="Roact" description="React analog for Roblox UI in Lua">
+				<ProjectLink to="https://github.com/Roblox/roact">GitHub</ProjectLink>
+			</Project>
+
+			<Project name="TestEZ" description="BDD-style testing framework for Roblox Lua">
+				<ProjectLink to="https://github.com/Roblox/testez">GitHub</ProjectLink>
+			</Project>
+
+			<Project name="Luanoid" description="Reimplementation of Roblox's character controller in pure Lua">
+				<ProjectLink to="https://github.com/LPGhatguy/luanoid">GitHub</ProjectLink>
+			</Project>
+		</ul>
+
+		<h2 className="Page-subtitle">Open Source at Gecko Designs (2015 - 2017)</h2>
+
+		<ul className="Projects-list">
+			<Project name="guh" description="Custom project generator and build system">
+				<ProjectLink to="https://github.com/LPGhatguy/guh">GitHub</ProjectLink>
 			</Project>
 		</ul>
 	</Page>
