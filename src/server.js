@@ -34,7 +34,7 @@ const source = readFileSync("index.html", "utf8");
 const renderPage = (content, title, description) => source
 	.replace(`<title></title>`, `<title>${ title }</title>`)
 	.replace(`<div id="root"></div>`, `<div id="root">${ content }</div>`)
-	.replace(`{meta_description}`, `<meta name="description" content="${ description }" />`);
+	.replace(`<meta name="description" content="" />`, `<meta name="description" content="${ description }" />`);
 
 const server = new Koa();
 const cache = new Map();
