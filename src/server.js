@@ -31,10 +31,21 @@ if (!DEPLOY_KEY) {
 
 const source = readFileSync("index.html", "utf8");
 
+const headInfoPattern = /<head-info\s*\/>/;
+
 const renderPage = (content, title, description) => source
-	.replace(`<title></title>`, `<title>${ title }</title>`)
-	.replace(`<div id="root"></div>`, `<div id="root">${ content }</div>`)
-	.replace(`<meta name="description" content="" />`, `<meta name="description" content="${ description }" />`);
+	.replace(headInfoPattern, `<title>${ title }</title><meta name="description" content="${ description }" />`)
+	.replace(`<div id="root"></div>`, `<div id="root">${ content }</div>`);
+
+const takeBeforeQuestionMark = content => {
+	let position = content.indexOf("?");
+
+	if (position === -1) {
+		return content;
+	}
+
+	return content.slice(0, position);
+};
 
 const server = new Koa();
 const cache = new Map();
@@ -42,7 +53,9 @@ const cache = new Map();
 server.use(koaMount("/static", koaStatic("static")));
 
 server.use(ctx => {
-	if (ctx.request.url === `/deploy/${ DEPLOY_KEY }`) {
+	const url = takeBeforeQuestionMark(ctx.request.url);
+
+	if (url === `/deploy/${ DEPLOY_KEY }`) {
 		setTimeout(() => {
 			execSync("git pull");
 			execSync("npm install");
@@ -55,16 +68,16 @@ server.use(ctx => {
 		return;
 	}
 
-	if (ctx.request.method === "GET" && cache.has(ctx.request.url)) {
+	if (ctx.request.method === "GET" && cache.has(url)) {
 		ctx.response.status = 200;
-		ctx.body = cache.get(ctx.request.url);
+		ctx.body = cache.get(url);
 
 		return;
 	}
 
 	const context = {};
 	const page = (
-		<StaticRouter location={ ctx.request.url } context={ context }>
+		<StaticRouter location={ url } context={ context }>
 			<App />
 		</StaticRouter>
 	);
@@ -82,7 +95,7 @@ server.use(ctx => {
 	}
 
 	if (ctx.request.method === "GET" && ctx.response.status === 200) {
-		cache.set(ctx.request.url, result);
+		cache.set(url, result);
 	}
 
 	ctx.body = result;

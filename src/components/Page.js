@@ -5,6 +5,10 @@ import "./Page.css";
 const setTitle = title => {
 	const titleElement = document.head.querySelector("title");
 
+	if (!titleElement) {
+		return;
+	}
+
 	if (title) {
 		titleElement.innerText = "lpg | " + title;
 	} else {
@@ -14,6 +18,10 @@ const setTitle = title => {
 
 const setDescription = description => {
 	const descriptionElement = document.head.querySelector(`meta[name="description"]`);
+
+	if (!descriptionElement) {
+		return;
+	}
 
 	if (description) {
 		descriptionElement.content = description;
