@@ -67,6 +67,14 @@ const Projects = () => (
 				<ProjectLink to="https://github.com/LPGhatguy/rbxfs">GitHub</ProjectLink>
 			</Project>
 
+			<Project name="rbxpacker" description="Creates interactive installers for Roblox libraries">
+				<ProjectLink to="https://github.com/LPGhatguy/rbxpacker">GitHub</ProjectLink>
+			</Project>
+
+			<Project name="Textbox" description="Manages textbox input management for LÖVE">
+				<ProjectLink to="https://github.com/LPGhatguy/textbox">GitHub</ProjectLink>
+			</Project>
+
 			<Project name="luajit-request" description="Wraps cURL to provide an easy-to-use HTTPS interface for LuaJIT">
 				<ProjectLink to="https://github.com/LPGhatguy/luajit-request">GitHub</ProjectLink>
 			</Project>
@@ -101,6 +109,10 @@ const Projects = () => (
 		<ul className="Projects-list">
 			<Project name="guh" description="Custom project generator and build system">
 				<ProjectLink to="https://github.com/LPGhatguy/guh">GitHub</ProjectLink>
+			</Project>
+
+			<Project name="ekma" description="ES2015 template string based templating API">
+				<ProjectLink to="https://github.com/LPGhatguy/ekma">GitHub</ProjectLink>
 			</Project>
 		</ul>
 	</Page>
