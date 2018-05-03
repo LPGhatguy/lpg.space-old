@@ -1,11 +1,13 @@
 .Article {
+	padding-top: 1rem;
+	padding-bottom: 2rem;
 }
 
 .Article-header {
 	display: flex;
 	align-items: center;
 	border-bottom: 1px solid #ccc;
-	max-width: 44rem;
+	max-width: 46rem;
 	margin: 0 auto;
 }
 

@@ -41,11 +41,9 @@ const Blog = () => {
 	return (
 		<Page className="Blog" title="Blog">
 			<div className="Blog-posts">
-				<div className="Blog-post">
-					{ sortedPosts.map((post) => (
-						<Article key={ post.id } post={ post } inline={ true } />
-					)) }
-				</div>
+				{ sortedPosts.map((post) => (
+					<Article key={ post.id } post={ post } inline={ true } />
+				)) }
 			</div>
 		</Page>
 	);
