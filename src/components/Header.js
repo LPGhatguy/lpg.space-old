@@ -1,6 +1,6 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
 
+import { Link, NavLink } from "./navigation";
 import "./Header.css";
 
 const NavItem = ({ to, children, exact }) => (
