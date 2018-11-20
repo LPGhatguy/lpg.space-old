@@ -1,12 +1,10 @@
 # dependencies
 /node_modules
 
-# testing
-/deploy
-/coverage
-
-# production
-/build
+# output
+/dev
+/prod
+/build-stats.json
 
 # misc
 npm-debug.log*

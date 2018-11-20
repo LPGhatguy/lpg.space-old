@@ -1,10 +1,21 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { render, hydrate } from "react-dom";
+import { BrowserRouter } from "react-router-dom";
+
+import App from "./components/App";
+
+import "./reset.css";
 
 const app = document.querySelector("#app");
 
-function App() {
-	return <h1>Hello, world!</h1>
-}
+const element = (
+	<BrowserRouter>
+		<App />
+	</BrowserRouter>
+);
 
-ReactDOM.render(<App />, app);
+if (process.env.NODE_ENV === "production") {
+	hydrate(element, app);
+} else {
+	render(element, app);
+}
