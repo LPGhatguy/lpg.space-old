@@ -1,0 +1,11 @@
+#!/bin/sh
+
+set -e
+
+npm run build
+cd prod
+git init
+git add .
+git commit -m "Deploy"
+git remote add origin git@github.com:LPGhatguy/lpg.space.git
+git push --force origin master:gh-pages
