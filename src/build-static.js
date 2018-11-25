@@ -54,7 +54,7 @@ function renderPage(url) {
 		.replace("{content}", body)
 		.replace("{title}", linkContext.pageTitle)
 		.replace("{description}", linkContext.pageDescription)
-		.replace("</head>", `${ extraHeadTags }</head>`);
+		.replace("</head>", `${ extraHeadTags }</head>`)
 		.replace("</body>", `${ extraBodyTags }</body>`);
 
 	return { pageContents, linkContext };

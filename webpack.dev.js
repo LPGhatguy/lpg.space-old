@@ -1,14 +1,15 @@
 const path = require("path");
 
-const merge = require("webpack-merge");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const common = require("./webpack.common");
 
-module.exports = merge(common, {
+module.exports = {
+	...common,
 	mode: "development",
 	module: {
 		rules: [
+			...common.module.rules,
 			{
 				test: /\.css$/,
 				use: ["style-loader", "css-loader"],
@@ -28,4 +29,4 @@ module.exports = merge(common, {
 			template: "src/index.html",
 		}),
 	],
-});
+};
