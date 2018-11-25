@@ -1,4 +1,4 @@
-import { readFileSync, writeFile, ensureDir } from "fs-extra";
+import { readFileSync, writeFile, ensureDir, copy } from "fs-extra";
 import path from "path";
 
 import React from "react";
@@ -9,6 +9,7 @@ import config from "./config";
 import App from "./components/App";
 import { RouterContext } from "./components/Router";
 
+const staticDir = path.join(__dirname, "../static");
 const baseHtml = readFileSync(path.join(__dirname, "index.html"), "utf8");
 const buildStats = JSON.parse(readFileSync(path.join(__dirname, "../build-stats.json"), "utf8"));
 const baseOutputDir = path.join(__dirname, "../prod");
@@ -101,4 +102,13 @@ async function crawlAndOutput() {
 	}
 }
 
-crawlAndOutput();
+async function copyStatic() {
+	await copy(staticDir, baseOutputDir);
+}
+
+async function build() {
+	await copyStatic();
+	await crawlAndOutput();
+}
+
+build();
