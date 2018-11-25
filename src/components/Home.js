@@ -1,11 +1,12 @@
 import React from "react";
 
 import Page from "./Page";
+import Card from "./Card";
 
 export default function Home() {
 	return (
 		<Page title="Home">
-			<h1>Home</h1>
+			<Card>Hello, world!</Card>
 		</Page>
 	);
 }

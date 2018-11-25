@@ -4,7 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 
 import App from "./components/App";
 
-import "./reset.css";
+import "./base.css";
 
 const app = document.querySelector("#app");
 

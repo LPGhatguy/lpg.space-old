@@ -1,0 +1,21 @@
+* {
+	box-sizing: inherit;
+	margin: 0;
+	padding: 0;
+	border: none;
+	text-decoration: none;
+	background: transparent;
+	font: inherit;
+	color: inherit;
+}
+
+html {
+	box-sizing: border-box;
+	font-family: Lato;
+	font-weight: 400;
+	height: 100%;
+}
+
+body {
+	min-height: 100%;
+}

@@ -14,11 +14,12 @@ const baseHtml = readFileSync(path.join(__dirname, "index.html"), "utf8");
 const buildStats = JSON.parse(readFileSync(path.join(__dirname, "../build-stats.json"), "utf8"));
 const baseOutputDir = path.join(__dirname, "../prod");
 
+let extraHeadTags = "";
 let extraBodyTags = "";
 
 for (const asset of buildStats.assets) {
 	if (asset.name.endsWith(".css")) {
-		extraBodyTags += `<link rel="stylesheet" href="/${ asset.name }" />\n`;
+		extraHeadTags += `<link rel="stylesheet" href="/${ asset.name }" />\n`;
 	} else if (asset.name.endsWith(".js")) {
 		extraBodyTags += `<script type="text/javascript" src="/${ asset.name }"></script>\n`;
 	}
@@ -53,6 +54,7 @@ function renderPage(url) {
 		.replace("{content}", body)
 		.replace("{title}", linkContext.pageTitle)
 		.replace("{description}", linkContext.pageDescription)
+		.replace("</head>", `${ extraHeadTags }</head>`);
 		.replace("</body>", `${ extraBodyTags }</body>`);
 
 	return { pageContents, linkContext };

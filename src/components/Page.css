@@ -1,0 +1,10 @@
+.Page {
+	color: red;
+}
+
+.Page-body {
+	width: 100%;
+	max-width: 52rem;
+	margin: 0 auto;
+	background-color: red;
+}

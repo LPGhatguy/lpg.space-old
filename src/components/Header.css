@@ -1,0 +1,33 @@
+.Header {
+	background-color: #dbf2ff;
+}
+
+.Header-inner {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: stretch;
+	width: 100%;
+	max-width: 56rem;
+	margin: 0 auto;
+	padding: 0 0.5rem;
+}
+
+.Header-title {
+	font-size: 2rem;
+	margin-right: 1rem;
+}
+
+.Header-nav {
+	flex-grow: 1;
+	display: flex;
+	align-items: stretch;
+}
+
+.Header-nav-item {
+	display: flex;
+	align-items: center;
+}
+
+.Header-nav-item:not(:last-of-type) {
+	margin-right: 0.5rem;
+}
