@@ -51,6 +51,7 @@ function renderPage(url) {
 	const pageContents = baseHtml
 		.replace("{content}", body)
 		.replace("{title}", linkContext.pageTitle)
+		.replace("{description}", linkContext.pageDescription)
 		.replace("</body>", `${ extraBodyTags }</body>`);
 
 	return { pageContents, linkContext };
