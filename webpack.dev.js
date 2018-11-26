@@ -1,5 +1,6 @@
 const path = require("path");
 
+const { HotModuleReplacementPlugin } = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const common = require("./webpack.common");
@@ -12,13 +13,17 @@ module.exports = {
 			...common.module.rules,
 			{
 				test: /\.css$/,
-				use: ["style-loader", "css-loader"],
+				use: [
+					"style-loader",
+					"css-loader",
+				],
 			},
 		],
 	},
 	devtool: "inline-source-map",
 	devServer: {
 		contentBase: "./dev",
+		hot: true,
 	},
 	output: {
 		filename: "[name].bundle.js",
@@ -28,5 +33,6 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			template: "src/index.html",
 		}),
+		new HotModuleReplacementPlugin(),
 	],
 };

@@ -13,7 +13,10 @@ module.exports = {
 			...common.module.rules,
 			{
 				test: /\.css$/,
-				use: [MiniCssExtractPlugin.loader, "css-loader"],
+				use: [
+					MiniCssExtractPlugin.loader,
+					"css-loader",
+				],
 			},
 		],
 	},
