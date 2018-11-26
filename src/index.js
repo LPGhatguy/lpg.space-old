@@ -2,9 +2,10 @@ import React from "react";
 import { render, hydrate } from "react-dom";
 import { BrowserRouter } from "react-router-dom";
 
+import "./base.css";
+
 import App from "./components/App";
 
-import "./base.css";
 
 const app = document.querySelector("#app");
 

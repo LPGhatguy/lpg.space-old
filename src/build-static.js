@@ -1,3 +1,5 @@
+import "ignore-styles";
+
 import { readFileSync, writeFile, ensureDir, copy } from "fs-extra";
 import path from "path";
 

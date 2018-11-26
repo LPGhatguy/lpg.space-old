@@ -22,7 +22,7 @@ module.exports = {
 	},
 	devtool: "inline-source-map",
 	devServer: {
-		contentBase: "./dev",
+		contentBase: path.resolve(__dirname, "dev"),
 		hot: true,
 	},
 	output: {

@@ -20,13 +20,13 @@ module.exports = {
 			},
 		],
 	},
+	devtool: "source-map",
 	plugins: [
 		new MiniCssExtractPlugin({
 			filename: "[name]-[contenthash].css",
 		}),
 		new StatsPlugin("../build-stats.json"),
 	],
-	devtool: "source-map",
 	output: {
 		filename: "[name]-[contenthash].js",
 		path: path.resolve(__dirname, "prod"),
