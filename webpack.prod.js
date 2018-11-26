@@ -1,6 +1,8 @@
 const path = require("path");
 
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const StatsPlugin = require("stats-webpack-plugin");
 
 const common = require("./webpack.common");
@@ -30,5 +32,15 @@ module.exports = {
 	output: {
 		filename: "[name]-[contenthash].js",
 		path: path.resolve(__dirname, "prod"),
+	},
+	optimization: {
+		minimizer: [
+			new OptimizeCssAssetsPlugin(),
+			new UglifyJsPlugin({
+				cache: true,
+				parallel: true,
+				sourceMap: true,
+			}),
+		],
 	},
 };
