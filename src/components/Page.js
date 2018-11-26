@@ -20,7 +20,7 @@ export default function Page({ title, description, children }) {
 			<PageTitle value={ title } />
 			<PageDescription value={ description } />
 
-			<div className="Page-body">
+			<div className="Page-inner">
 				{ children }
 			</div>
 		</div>

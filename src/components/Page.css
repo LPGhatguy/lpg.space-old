@@ -1,10 +1,9 @@
 .Page {
-	color: red;
 }
 
-.Page-body {
+.Page-inner {
 	width: 100%;
 	max-width: 52rem;
 	margin: 0 auto;
-	background-color: red;
+	padding: 0 0.5rem;
 }

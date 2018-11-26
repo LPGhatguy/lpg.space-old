@@ -9,7 +9,7 @@ export default function Header() {
 		<header className="Header">
 			<div className="Header-inner">
 				<h1 className="Header-title">
-					<Link to="/">lpg.space</Link>
+					<Link className="Header-title-link" to="/">lpg.space</Link>
 				</h1>
 
 				<nav className="Header-nav">
