@@ -15,6 +15,7 @@ export default function Header() {
 				<nav className="Header-nav">
 					<Link className="Header-nav-item" to="/projects">Projects</Link>
 					<Link className="Header-nav-item" to="/blog">Blog</Link>
+					<Link className="Header-nav-item" to="/roblox-api">Roblox API</Link>
 				</nav>
 			</div>
 		</header>
